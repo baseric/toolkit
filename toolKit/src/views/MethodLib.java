@@ -31,7 +31,7 @@ import business.codesource.AnalysisJavaFile;
 
 public class MethodLib extends ViewPart {
 
-	public static final String ID = "views.MethodLib"; //$NON-NLS-1$
+	public static final String ID = "views.MethodLib"; //
 	private Tree tree = null;
 	private String rootPath = "E:\\runtime-EclipseApplication\\financemanage_yq\\src\\base\\util\\";
 	/**
