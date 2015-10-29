@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <drawer text='画图'>
+    	<tool class='business.model.logic.LogicStartModel' text='开始' icon='start.png'></tool>
+    	<tool class='business.model.logic.EndModel' text='结束' icon='end.png'></tool>
+    	<tool class='business.model.action.MethodModel' text='自定义方法' icon='method.png'></tool>
+    	<tool class='business.model.action.VariableModel' text='变量设置' icon='variableSet.png'></tool>
+    	<tool class='business.model.action.SpringBeanModel' text='Spring Bean' icon='method.png'></tool>
+    	<tool class='business.model.action.MethodModel' text='自定义方法' icon='method.png'></tool>
+    	<tool class='business.model.action.PackageVariableModel' text='变量封装' icon='variableSet.png'></tool>
+    	<tool class='business.model.logic.SingleTabOptModel' text='单表操作' icon='database_opt.png'></tool>
+    	<tool class='business.model.logic.QueryModel' text='列表查询' icon='database_search2.png'></tool>
+    </drawer>
+    <drawer text='业务组件'> 
+    	<tool class='business.model.logic.QueryModel' text='列表查询' icon='database_search2.png'></tool>
+    </drawer>
+    <drawer text='其他' close='Y'>
+    	<tool class='business.model.logic.LogicStartModel' text='备注' icon='remark.png'></tool>
+    </drawer>
+</root>

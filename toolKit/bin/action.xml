@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <drawer text='画图'> 
+    	<tool class='business.model.action.StartModel' text='开始' icon='start.png'></tool>
+    	<tool class='business.model.action.LogicModel' text='业务逻辑' icon='logic.png'></tool>
+    	<tool class='business.model.action.MethodModel' text='自定义方法' icon='method.png'></tool>
+    	<tool class='business.model.action.VariableModel' text='变量设置' icon='variableSet.png'></tool>
+    	<tool class='business.model.action.PackageVariableModel' text='变量封装' icon='variableSet.png'></tool>
+   		<tool class='business.model.action.ValidateModel' text='校验' icon='validate.png'></tool>
+    	<tool class='business.model.logic.QueryModel' text='列表查询' icon='database_search2.png'></tool>
+    	<tool class='business.model.action.JspModel' text='页面跳转' icon='jsp.png'></tool>
+    	<tool class='business.model.action.ExcelModel' text='导出Excel' icon='excel.png'></tool>
+    	<tool class='business.model.action.ExcelModel' text='润乾报表' icon='report.png'></tool>
+    </drawer>
+    <drawer text='其他' close='Y'>
+    	<tool class='business.model.action.StartModel' text='备注' icon='remark.png'></tool>
+    </drawer>
+</root>
