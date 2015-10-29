@@ -5,7 +5,7 @@
     	<tool class='business.model.action.LogicModel' text='业务逻辑' icon='logic.png'></tool>
     	<tool class='business.model.action.MethodModel' text='自定义方法' icon='method.png'></tool>
     	<tool class='business.model.action.VariableModel' text='变量设置' icon='variableSet.png'></tool>
-    	<tool class='business.model.action.PackageVariableModel' text='变量封装' icon='variableSet.png'></tool>
+    	<tool class='business.model.action.PackageVariableModel' text='变量封装 ' icon='variableSet.png'></tool>
    		<tool class='business.model.action.ValidateModel' text='校验' icon='validate.png'></tool>
     	<tool class='business.model.logic.QueryModel' text='列表查询' icon='database_search2.png'></tool>
     	<tool class='business.model.action.JspModel' text='页面跳转' icon='jsp.png'></tool>
