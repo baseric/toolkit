@@ -49,6 +49,7 @@ import ui.model.UIContentsModel;
 import ui.outline.TreePartFactory;
 import ui.util.UIGenerateCode;
 import util.BaseInfoUtil;
+import util.Log;
 import util.PartFactory;
 import business.editor.menuaction.GetActionPathAction;
 import business.editor.menuaction.OpenSourceAction;
@@ -121,7 +122,7 @@ public class ViewEditor extends GraphicalEditorWithFlyoutPalette {
 			}
 			
 		} catch (Exception e){
-			e.printStackTrace();
+			Log.write("", e);
 		}finally{
 		}
 		return root;
@@ -147,7 +148,7 @@ public class ViewEditor extends GraphicalEditorWithFlyoutPalette {
 			UIContentsEditPart contents = (UIContentsEditPart)map.get(parent);
 			contents.reLocationChildren();
 		} catch (Exception e) {
-			e.printStackTrace();
+			Log.write("", e);
 		}
 	}
 
@@ -200,7 +201,7 @@ public class ViewEditor extends GraphicalEditorWithFlyoutPalette {
 			    actionList.add(action.getId());
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			Log.write("", e);
 		}
 	}
 	/**

@@ -205,6 +205,7 @@ public class EditColumnsNew extends ConnAbstractDialog {
 		if(colDesc!=null&&!"".equals(colDesc)){
 			sql +=" and col_dsc like '%"+colDesc+"%'";
 		}
+		sql +=" order by col_seq";
 		this.setMessage(sql);
 		List<Map<String,String>> tables = ConnFactory.queryList(sql, con);
 		tableViewer.setInput(tables);

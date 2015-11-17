@@ -41,7 +41,7 @@ public class WebUIMulitEditor extends MultiPageEditorPart {
 			
 			setPartName(file.getName());
 		} catch (Exception e) {
-			e.printStackTrace();
+			Log.write("", e);
 		}
 	}
  

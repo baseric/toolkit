@@ -51,7 +51,7 @@ public class Log {
 		 
 		  // 打开Console视图
 		  ConsolePlugin.getDefault().getConsoleManager().showConsoleView(console);
-		  // 使用MessageConsoleStream来打印你想要显示的信息到Console视图，这样一切就OK了，简单吧：）
+		  // 使用MessageConsoleStream来打印你想要显示的信息到Console视图
 		  if(message!=null&&message.length()>0)
 			  consoleStream.println(message);
 		  if(e!=null){
