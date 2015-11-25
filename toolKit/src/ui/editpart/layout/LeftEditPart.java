@@ -60,12 +60,20 @@ public class LeftEditPart extends ContainerPart{
 			this.reSetInner(); 
 			List<UIEditPartWithListener> children = this.getChildren();
 			Rectangle panel = this.getFigure().getBounds();
+			String title = ((UIAbstractModel)this.getModel()).val("title");
+			
 			for(int i = 0;i<children.size();i++){
 				Rectangle rect = children.get(i).getFigure().getBounds();
 				rect.x = panel.x +1;
 				rect.y = panel.y +this.getLocationY(children.get(i));
+				if(title!=null&&title.length()>0){
+					rect.y +=24;
+					rect.height = panel.height-25;
+				}else{
+					rect.height = panel.height-2;
+				}
 				rect.width = panel.width-2;
-				rect.height = panel.height-2;
+				//rect.height = panel.height-2;
 				UIAbstractModel model =(UIAbstractModel)children.get(i).getModel();
 				model.setWidth(String.valueOf(rect.width));
 				children.get(i).getFigure().setBounds(rect);

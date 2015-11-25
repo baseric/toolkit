@@ -177,7 +177,9 @@ public class JspDialog extends TitleAreaDialog {
 	                int key = returnType.getSelectionIndex();
 	               	if(key==0){
 	               		path.setEnabled(true);
+	               		button.setEnabled(true);
 	               	}else{
+	               		button.setEnabled(false);
 	               		path.setEnabled(false);
 	               	}
 	            }

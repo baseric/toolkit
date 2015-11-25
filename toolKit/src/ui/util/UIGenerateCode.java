@@ -30,6 +30,7 @@ import ui.model.abstractModel.ContainerModel;
 import ui.model.liger.FormModel;
 import util.ConnFactory;
 import util.EditorUtil;
+import util.FileUtil;
 import util.FreemarkerUtil;
 import util.Log;
 import util.PropertyReader;
@@ -148,7 +149,6 @@ public class UIGenerateCode {
 		name = name.replace(".ui", ".jsp");
 		PropertyReader reader = new PropertyReader();
 		String basePath = project.getLocation().toFile().getAbsolutePath() + reader.getPropertyValue("resourcePath");
-		String basePath2 = project.getLocation().toFile().getAbsolutePath() + reader.getPropertyValue("jspPath");
 		try {
 			pageInfo.put("includeJs", "");//引入的js
 			pageInfo.put("bindEvent","");//绑定的事件
@@ -165,15 +165,12 @@ public class UIGenerateCode {
 			String ftl_path = basePath + "/plugin_resource/ftl/";
 			/**查找配置文件**/
 			String filePath = file.getAbsolutePath();//页面配置文件路径
-			System.out.println(filePath);
-			System.out.println(basePath);
 			filePath = filePath.replace(basePath.replace("/","\\"), "").replace("\\"+file.getName(),"");
-			System.out.println(filePath);
-			outputFile = new File(basePath2 + filePath+"/"+name);//生成页面
-			
+			String jspPath = FileUtil.getJspFilePath(project,file);
+			outputFile = new File(jspPath);//生成页面
 			Log.write("生成jsp路径："+outputFile.getAbsolutePath());
 			if(!outputFile.exists()){
-				File dir = new File(basePath2+filePath+"/");
+				File dir = outputFile.getParentFile();
 				if(!dir.exists()){
 					dir.mkdirs();
 				}

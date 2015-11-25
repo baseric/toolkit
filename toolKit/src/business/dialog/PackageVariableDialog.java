@@ -30,6 +30,7 @@ import util.ConnFactory;
 import util.EditorUtil;
 import util.PublicTableSet;
 import util.thread.InitConnectionThread;
+import business.dialog.buttonAdapter.AddAdapter;
 import business.dialog.buttonAdapter.DeleteAdapter;
 import business.model.action.PackageVariableModel;
 
@@ -213,7 +214,10 @@ public class PackageVariableDialog extends ConnAbstractDialog {
 		createButton(parent,12, "新增一行",
 				false);
 		add = getButton(12);
-		add.addMouseListener(new DeleteAdapter(tableViewer));
+		HashMap<String,String> map = new HashMap<String,String>();
+		map.put("key","col_name");
+		map.put("value","value");
+		add.addMouseListener(new AddAdapter(tableViewer,map));
 		
 		createButton(parent,13, "删除一行",
 				false);

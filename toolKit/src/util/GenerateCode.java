@@ -80,7 +80,6 @@ public class GenerateCode {
 		//List<AbstractModel> children = contents.getChildren();
 		PropertyReader reader = new PropertyReader();
 		String basePath = project.getLocation().toFile().getAbsolutePath() + reader.getPropertyValue("resourcePath");
-		String basePath2 = project.getLocation().toFile().getAbsolutePath() + reader.getPropertyValue("javaPath");
 		try {
 			if(contents.getChildren().size()==0) return "";
 			String filePath = file.getAbsolutePath();//配置文件路径
@@ -95,10 +94,10 @@ public class GenerateCode {
 			//获取类名
 			fileName = fileName.replace(".ctl", ".java").replace(".logic",".java");
 			
-			outputFile = new File(basePath2+filePath+"/"+fileName);//生成代码的目录
+			outputFile = new File(FileUtil.getJavaFilePath(project, file));//生成代码的目录
 			Log.write("生成源文件路径："+outputFile.getAbsolutePath());
 			if(!outputFile.exists()){
-				File dir = new File(basePath2+filePath+"/");
+				File dir = outputFile.getParentFile();
 				if(!dir.exists()){
 					dir.mkdirs();
 				}

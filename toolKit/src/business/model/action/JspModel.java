@@ -17,7 +17,7 @@ public class JspModel extends AbstractModel {
 	private List<HashMap<String,String>> writeParam = new ArrayList<HashMap<String,String>>();
 	private List<HashMap<String,String>> varList = new ArrayList<HashMap<String,String>>();
 	public JspModel(){
-		this.setDisplay("页面跳转");
+		this.setDisplay("结果返回");
 		this.setIcon("jsp.png");
 	}
 	

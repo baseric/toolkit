@@ -34,6 +34,7 @@ import org.eclipse.swt.widgets.Text;
 import ui.model.UIContentsModel;
 import ui.util.UIGenerateCode;
 import util.EditorUtil;
+import util.PropertyReader;
 import util.PublicTableSet;
 import business.dialog.buttonAdapter.AddAdapter;
 import business.dialog.buttonAdapter.DeleteAdapter;
@@ -192,9 +193,11 @@ public class StartDialog extends TitleAreaDialog {
 			public void mouseDown(MouseEvent e) {
 				String input = inputJsp.getText();
 				IProject project = start.getFile().getProject();
+				PropertyReader reader = new PropertyReader();
 				if(input!=null&&input.length()>0){
 					IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-					IResource resource = root.findMember(new Path("/"+project.getName()+input));
+					String resourcePath = reader.getPropertyValue("resourcePath");
+					IResource resource = root.findMember(new Path("/"+project.getName()+resourcePath+input));
 					if(resource instanceof IFile){
 						IFile file = (IFile)resource;
 						UIGenerateCode code = new UIGenerateCode();

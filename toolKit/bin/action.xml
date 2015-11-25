@@ -7,8 +7,9 @@
     	<tool class='business.model.action.VariableModel' text='变量设置' icon='variableSet.png'></tool>
     	<tool class='business.model.action.PackageVariableModel' text='变量封装 ' icon='variableSet.png'></tool>
    		<tool class='business.model.action.ValidateModel' text='校验' icon='validate.png'></tool>
+    	<tool class='business.model.logic.SingleTabOptModel' text='单表操作' icon='database_search2.png'></tool>
     	<tool class='business.model.logic.QueryModel' text='列表查询' icon='database_search2.png'></tool>
-    	<tool class='business.model.action.JspModel' text='页面跳转' icon='jsp.png'></tool>
+    	<tool class='business.model.action.JspModel' text='结果返回' icon='jsp.png'></tool>
     	<tool class='business.model.action.ExcelModel' text='导出Excel' icon='excel.png'></tool>
     	<tool class='business.model.action.ExcelModel' text='润乾报表' icon='report.png'></tool>
     </drawer>
