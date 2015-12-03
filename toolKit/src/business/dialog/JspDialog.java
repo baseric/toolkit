@@ -37,6 +37,7 @@ import business.model.action.JspModel;
 
 public class JspDialog extends TitleAreaDialog {
 
+	private Text text;
 	private Combo returnType;
 	private Table table;
 	private Text path;
@@ -256,6 +257,17 @@ public class JspDialog extends TitleAreaDialog {
 					}
 				}
 			});
+
+			text = new Text(container, SWT.BORDER);
+			text.setBounds(156, 450, 578, 23);
+			text.setText(jsp.getDefClassPath());
+			final Label label_3 = new Label(container, SWT.NONE);
+			label_3.setText("自定义返回结果实现类：");
+			label_3.setBounds(10, 453, 140, 17);
+
+			final Label label_4 = new Label(container, SWT.NONE);
+			label_4.setText("注：自定义返回结果实现类需要实现IReturnModel接口");
+			label_4.setBounds(10, 485, 724, 17);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -280,7 +292,7 @@ public class JspDialog extends TitleAreaDialog {
 	 */
 	@Override
 	protected Point getInitialSize() {
-		return new Point(808, 613);
+		return new Point(808, 671);
 	}
 	protected void configureShell(Shell newShell) {
 		super.configureShell(newShell);
@@ -297,6 +309,7 @@ public class JspDialog extends TitleAreaDialog {
 	protected void okPressed() {
 		jsp.setDisplay(display.getText());
 		jsp.setPath(path.getText());
+		jsp.setDefClassPath(text.getText());
 		jsp.setReturnType(String.valueOf(returnType.getSelectionIndex()));
 		jsp.setWriteParam(PublicTableSet.getTableData(writeParam));
 		jsp.setVarList(PublicTableSet.getTableData(tableViewer_1));

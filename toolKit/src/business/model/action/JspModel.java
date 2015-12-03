@@ -16,6 +16,8 @@ public class JspModel extends AbstractModel {
 	
 	private List<HashMap<String,String>> writeParam = new ArrayList<HashMap<String,String>>();
 	private List<HashMap<String,String>> varList = new ArrayList<HashMap<String,String>>();
+	
+	private String defClassPath = "";
 	public JspModel(){
 		this.setDisplay("结果返回");
 		this.setIcon("jsp.png");
@@ -37,10 +39,12 @@ public class JspModel extends AbstractModel {
 		obj.put("varList", varList);
 		obj.put("returnType", returnType);
 		obj.put("path", path);
+		obj.put("defClassPath", defClassPath==null?"":defClassPath);
 		return getCodeByTemplate(obj);
 	}
 	public void writeInXml (Element element){
 		element.addAttribute("path", path);
+		element.addAttribute("defClassPath", defClassPath);
 		element.addAttribute("display", this.getDisplay());
 		element.addAttribute("returnType", returnType);
 		this.writeList(element, writeParam, "params");
@@ -48,6 +52,7 @@ public class JspModel extends AbstractModel {
 	}
 	public void readFromXml(Element element){
 		this.path = element.attributeValue("path", path);
+		this.defClassPath = element.attributeValue("defClassPath", defClassPath);
 		this.setDisplay(element.attributeValue("display"));
 		this.returnType = element.attributeValue("returnType");
 		writeParam = this.readList(element, "params");
@@ -88,6 +93,14 @@ public class JspModel extends AbstractModel {
 	@Override
 	public List<HashMap<String, String>> getParamList() {
 		return null;
+	}
+
+	public String getDefClassPath() {
+		return defClassPath;
+	}
+
+	public void setDefClassPath(String defClassPath) {
+		this.defClassPath = defClassPath;
 	}
 
 
